@@ -1,0 +1,49 @@
+.footer {
+  display: flex;
+  flex-grow: 1;
+  flex-basis: auto;
+  flex-flow: column-reverse;
+  justify-content: center;
+
+  border-top: 1px solid #EDEDED;
+  margin-top: 30px;
+  padding: 20px 0;
+  font-size: 0.8em;
+  text-align: center;
+
+  @media $medium {
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  .info {
+    margin-top: 10px;
+    @media $medium {
+      margin-top: 0;
+    }
+  }
+
+  .footer-menu {
+    justify-content: space-around;
+    list-style-type: none;
+    text-transform: uppercase;
+
+    @media $small {
+      flex-flow: row;
+
+      li:first-child { margin-left: 0; }
+      li { margin-left: 20px; }
+    }
+  }
+
+  a,
+  span {
+    color: #bbb;
+    font-family: $font-univers-condense;
+  }
+
+  a:hover, a:focus {
+    color: $a-color-hover;
+  }
+
+}

@@ -1,0 +1,44 @@
+.top-bar {
+  width: 100%;
+  background: $lightgray;
+  border-bottom: 1px solid $bordergray;
+  box-shadow: 0px 2px 2px rgba(0,0,0,0.3);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  @media $small {
+    text-align: left;
+  }
+
+  .branding {
+    margin: 1em 0;
+
+      img {
+        margin: 0 auto;
+        @media $small {
+          float: right;
+        }
+      }
+
+      a#site_name {
+        color: #717073;
+        font-family: $font-univers-bold;
+      }
+
+      h1 {
+        display: inline-block;
+        position: relative;
+        top: 6px;
+
+        color: #717073;
+        font-size: 1.2em;
+        font-weight: normal;
+        text-transform: uppercase;
+      }
+
+  } /* branding */
+
+}

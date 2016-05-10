@@ -1,0 +1,54 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+  font-size: 1.6rem;
+  line-height: 160%;
+  font-weight: $font-weight-normal;
+
+  @mixin linkColor;
+
+}
+
+.container {
+  width: $container-default-width;
+  max-width: $container-max-width;
+  margin: 0 auto;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+  font-family: $font-main;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+p {
+  line-height: 180%;
+  margin-top: 0.3em;
+  margin-bottom: 2em;
+}
+
+a {
+  color: $a-color;
+  text-decoration: none;
+  font-family: $font-univers-condense;
+}
+
+a:hover, a:focus {
+  color: $a-color-hover;
+  text-decoration: none;
+}

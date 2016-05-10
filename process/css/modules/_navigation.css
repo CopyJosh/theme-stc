@@ -1,0 +1,117 @@
+nav {
+  ul {
+    list-style-type: none;
+  }
+}
+
+.nav {
+  position: relative;
+
+  .navbar {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+  } /* navbar */
+
+  .account {
+    margin: 0 auto;
+    flex-direction: row;
+    justify-content: center;
+    width: $container-default-width;
+    max-width: $container-max-width;
+
+    @media $small {
+      justify-content: flex-end;
+    }
+
+    li:first-child {
+      padding-right: 1.5em;
+    }
+
+    a {
+      font-size: 0.8em;
+      font-family: $font-univers-roman;
+    }
+
+  } /* account */
+
+  .main {
+    justify-content: space-between;
+    background: #eee;
+
+    border: 1px solid #ddd;
+    border-width: 0 0 1px 1px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+
+    @media $medium {
+      flex-flow: row wrap;
+    }
+
+    li {
+      flex-grow: 1;
+      flex-basis: auto;
+      transition: 0.5s ease-out;
+
+      border-top: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+
+      &:last-child {
+        border-right: none;
+      }
+
+      @media $medium {
+        &:hover, &:focus {
+          .dropdown {
+            display: flex;
+            z-index: 300;
+          }
+        }
+      } /* li */
+
+      .dropdown {
+        position: relative;
+        z-index: 250;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+        display: none;
+
+        @media $medium {
+          position: absolute;
+        }
+
+        &.active {
+          display: flex;
+          box-shadow: inset -1px 2px 2px rgba(0,0,0,0.3);
+          a {
+            &.active,
+            &:focus, &:hover {
+              background: none;
+            }
+          }
+        }
+
+      } /* dropdown */
+
+
+      a {
+        display: flex;
+        justify-content: center;
+        padding: 8px 5px;
+        text-transform: uppercase;
+        letter-spacing: 0.01em;
+        transition: 0.5s ease-out;
+        &.active,
+        &:hover, &:focus {
+          background: white;
+        }
+      } /* a */
+
+    } /* li */
+
+  } /* main */
+
+} /*nav*/

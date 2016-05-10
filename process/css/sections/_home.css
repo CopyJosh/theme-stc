@@ -1,0 +1,121 @@
+$widget-width: 100%;
+
+#home_page {
+  @mixin linkColor
+}
+
+#home {
+
+  margin: 1em 0 0 0;
+
+  .carousel {
+    position: relative;
+  }
+
+  .cycle-pager {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    span {
+      width: 15px;
+      height: 15px;
+      background: #ddd;
+      color: #ddd;
+      margin-right: 10px;
+      display: block;
+      float: left;
+      cursor: pointer;
+
+      &:hover,
+      &.cycle-pager-active {
+        background: #87B3C6;
+        color: #87B3C6;
+      }
+    }
+  }
+
+  #welcome {
+    position: absolute;
+    bottom: 45px;
+    padding-left: 20px;
+    z-index: 5;
+    font-family: $font-univers-roman;
+
+    h4 {
+      color: white;
+      font-size: 2em;
+    }
+  }
+
+  .widget-container {
+    margin-top: 15px;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+
+    margin-left:-5px; /* see border-x: white below */
+    margin-right:-5px;  /* hack to accomodate flex-gutters */
+
+    @media $small {
+      flex-flow: row wrap;
+    }
+
+    .widget {
+      color: white;
+      flex-grow: 1;
+      flex-basis: auto;
+      text-align: center;
+      margin-bottom: 10px;
+      line-height: 120%;
+      width: 100%;
+      min-width: 240px;
+
+      border-left: 5px solid white; /* force equal space between widgets */
+      border-right: 5px solid white;
+
+      @media $small {
+        width: calc($widget-width/4);
+      }
+
+      &:last-child {
+      }
+
+      fieldset {
+        margin: 15px 25px;
+        border: 1px solid white;
+      } /* fieldset */
+
+      legend {
+        padding: 5px;
+        padding-bottom: 16px;
+        font-size: 1em;
+        font-weight: $font-weight-bold;
+      }
+
+      p {
+        margin: 0 0 22px 0;
+        font-size: 0.9em;
+        font-family: $font-univers-roman;
+      }
+
+      a {
+        margin: 23px auto;
+        padding: 5px;
+        font-size: 0.8em;
+        line-height: 150%;
+        display: block;
+        border: 1px solid;
+        max-width: 200px;
+      }
+
+    } /* widget */
+
+    .steelblue { @mixin widgetColor 70, 130, 180 }
+    .darkkhaki { @mixin widgetColor 189, 183, 107 }
+    .darkolivegreen { @mixin widgetColor 85, 107, 47 }
+    .cadetblue { @mixin widgetColor 95, 158, 160 }
+
+  } /* widget-container */
+
+}

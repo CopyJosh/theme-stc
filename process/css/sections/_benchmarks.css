@@ -1,0 +1,35 @@
+#benchmarks_page {
+    @mixin linkColor
+}
+
+#benchmarks {
+
+  table, td, th {
+    border:1px solid #ddd;
+    padding: 5px;
+    text-align: left;
+    vertical-align: bottom;
+  }
+
+  table {
+    width: 100%;
+    margin: 1em 0 2em 0;
+    border-collapse: collapse;
+  }
+
+  th {
+    &.headline {
+      color: white;
+      line-height: 200%;
+      font-weight: $font-weight-bold;
+      background: $a-color-hover;
+    }
+
+    &.bold {
+      font-family: $font-univers-bold;
+      color: $a-color-hover;
+      text-transform: uppercase;
+    }
+  } /* th */
+
+}

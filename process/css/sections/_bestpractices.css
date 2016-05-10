@@ -1,0 +1,7 @@
+#best-practices-page {
+    @mixin linkColor darkkhaki
+}
+
+article {
+  margin: 1em;
+}

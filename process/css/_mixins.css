@@ -1,0 +1,49 @@
+@define-mixin widgetColor
+  $r, $g, $b,
+  $border-color: white {
+
+  background-color: rgb($r, $g, $b);
+  opacity: 0.8;
+  transition: 0.5s ease-out;
+
+  &:hover {
+    background-color: rgb($r, $g, $b);
+    opacity: 1;
+  }
+
+  a {
+    color: rgb($r, $g, $b);
+    border-color: $border-color;
+    background-color: white;
+  }
+
+  a:hover, a:focus {
+    color: white;
+    background-color: rgb($r, $g, $b);
+  }
+
+}
+
+@define-mixin linkColor
+  $color-hover: $a-color-hover,
+  $color: $a-color {
+
+    h3  {
+      color: $color-hover;
+    }
+
+    a {
+      color: $color;
+      &.active,
+      &:hover, &:focus {
+        color: $color-hover;
+      }
+    }
+
+    .branding a {
+      &:hover, &:focus {
+        color: $color-hover;
+      }
+    }
+
+}

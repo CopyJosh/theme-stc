@@ -1,0 +1,40 @@
+@import url('http://fast.fonts.com/cssapi/d051664e-30f7-411a-a300-949044a1e41b.css');
+
+$font-main: "Univers LT W01 55 Roman";
+$font-weight-normal: 300;
+$font-weight-bold: 600;
+$font-weight-heavy: 700;
+
+$font-univers-condense: "UniversLTW01-57Condense 723821";
+$font-univers-roman: "Univers LT W01 55 Roman";
+$font-univers-bold: "Univers LT W01 65 Bold";
+
+$offwhite: #EEE8D6;
+$darkblue: #022933;
+$yellow:   #F3D350;
+$blue:     #0076A3;
+$green:    #BFC406;
+$orange:   #FFB12F;
+$red:      #D14348;
+$purple:    #6D73C2;
+
+$lightgray: #f7f7f7;
+$bordergray: #dddddd;
+
+$a-color: darkgray;
+$a-color-hover: #5A7E92;
+$a-font-family: "Univers LT W01 55 Roman";
+
+
+$color-main:       black;
+$color-background: white;
+
+$small: screen and (min-width: 600px);
+$medium: screen and (min-width: 768px);
+$large: screen and (min-width: 1200px);
+$benchmark-screen: screen and (min-width: 865px);
+$page-width: 100%;
+
+
+$container-default-width: 98%;
+$container-max-width: 1000px;
