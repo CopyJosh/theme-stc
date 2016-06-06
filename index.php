@@ -1,7 +1,5 @@
 <?php
 
-use Pagekit\Site\MenuHelper;
-
 /**
  * Configuration
  */
@@ -34,16 +32,11 @@ return [
 
         'homepage' => 'Homepage',
         'sidebar' => 'Sidebar',
+        'header-bar' => 'Header-Bar'
 
     ],
 
     'nodes' => [
-
-        'cast-study' => [
-            'name' => '@case-study',
-            'label' => 'Case Study',
-            'controller' => 'CaseStudyController::indexAction'
-        ]
 
     ],
 
@@ -59,21 +52,8 @@ return [
 
     'routes' => [
 
-        '/api/site/menu' => [
-            'name' => '@site/api/menu',
-            'controller' => 'Pagekit\\Site\\Controller\\MenuApiController'
-        ],
 
     ],
-
-    /**
-     * Custom Widgets
-     */
-     'widgets' => [
-
-        'widgets/sidebar-menu.php'
-
-     ],
 
     /**
      * Widget defaults

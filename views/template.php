@@ -5,17 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= $view->render('head') ?>
+    <?php $view->style('uikit-css', 'https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.3/css/uikit.min.css') ?>
     <?php $view->style('theme', 'theme:css/theme.css') ?>
-    <?php $view->script('theme', 'theme:js/theme.js') ?>
+    <?php $view->script('theme', 'theme:js/theme.js', ['uikit']) ?>
+
+    <script type="text/javascript">
+        $(function() {
+            $(".cross").hide();
+            $(".hamburger").click(function () {
+                $("#ham").slideToggle("fast", function () {
+                    $(".hamburger").hide();
+                    $(".cross").show();
+                });
+            });
+
+            $(".cross").click(function () {
+                $("#ham").slideToggle("fast", function () {
+                    $(".cross").hide();
+                    $(".hamburger").show();
+                });
+            });
+        });
+    </script>
 </head>
 <body id="<?= $params['stc_page_id']."_page" ?>">
 
+<!-- hamburger menu -->
+<button class="hamburger">&#9776;</button>
+<button class="cross">&#735;</button>
+
 <div class="top-bar">
     <nav class="nav" role="navigation">
-        <ul class="navbar account">
-            <li><a href="#change_password">Change Password</a></li>
-            <li><a href="#logout">Logout</a></li>
-        </ul>
+        <?php if ($view->position()->exists('header-bar')) : ?>
+            <?= $view->position('header-bar', 'position-header-bar.php') ?>
+        <?php endif; ?>
     </nav> <!-- navbar (account) -->
 </div>
 
@@ -54,9 +77,14 @@
     <!-- Render widget position -->
     <section id="<?= $params['stc_page_id'] ?>" class="page-container">
         <!-- Render menu position -->
-        <?php if ($view->position()->exists('sidebar')) : ?>
-            <?= $view->position('sidebar', 'sidebar.php') ?>
-        <?php endif ?>
+        <?php
+        if ($params['stc_page_id'] == 'benchmarks'
+            || $params['stc_page_id'] == 'best-practices') {
+            echo $view->menu('main', 'menu-sidebar.php');
+        } elseif ($params['stc_page_id'] == 'case-studies') {
+            echo $view->render('case-study:views/category-menu.php');
+        }
+        ?>
         <?= $view->render('content') ?>
     </section>
 
@@ -89,6 +117,8 @@
 
     <!-- Insert code before the closing body tag  -->
     <?= $view->render('footer') ?>
+
+    <?= $view->render('theme:views/analytics.php') ?>
 
 </body>
 </html>

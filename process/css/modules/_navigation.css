@@ -1,6 +1,46 @@
 nav {
+
+  a {
+    font-family: $font-univers-condense;
+  }
+
   ul {
     list-style-type: none;
+  }
+}
+
+.hamburger,
+.cross {
+  background: none;
+  position: absolute;
+  top: 35px;
+  right: calc(100%-30px);
+  padding: 0 0 0 5px;
+  color: $a-color;
+  border: 0;
+  font-weight: bold;
+  outline: none;
+  z-index: 100000000000;
+  display: block;
+
+  @media $small {
+    top: 70px;
+  }
+  @media $medium {
+    display: none;
+  }
+}
+
+.hamburger{
+  line-height: 45px;
+  font-size: 1.4em;
+}
+.cross{
+  top: 40px;
+  font-size: 3em;
+  line-height: 65px;
+  @media $small {
+    top: 75px;
   }
 }
 
@@ -16,22 +56,28 @@ nav {
   } /* navbar */
 
   .account {
-    margin: 0 auto;
+    margin: 3px auto;
     flex-direction: row;
     justify-content: center;
     width: $container-default-width;
     max-width: $container-max-width;
 
-    @media $small {
+    @media $medium {
       justify-content: flex-end;
     }
 
-    li:first-child {
-      padding-right: 1.5em;
+    li {
+      font-size: 0.8em;
+      font-family: $font-univers-roman;
+      font-weight: bold;
+    }
+
+    li:nth-child(even) {
+      color: $a-color;
+      padding: 0 1em;
     }
 
     a {
-      font-size: 0.8em;
       font-family: $font-univers-roman;
     }
 
@@ -44,15 +90,19 @@ nav {
     border: 1px solid #ddd;
     border-width: 0 0 1px 1px;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+    display: none;
+
+    transition: 0.5s ease-out;
 
     @media $medium {
       flex-flow: row wrap;
+      display: flex;
     }
 
     li {
       flex-grow: 1;
       flex-basis: auto;
-      transition: 0.5s ease-out;
+      transition: 0.5s ease-out 5s;
 
       border-top: 1px solid #ddd;
       border-right: 1px solid #ddd;
@@ -78,6 +128,15 @@ nav {
         background: white;
         box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
         display: none;
+
+        li {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+          @media $medium {
+            height: 50px;
+          }
+        }
 
         @media $medium {
           position: absolute;

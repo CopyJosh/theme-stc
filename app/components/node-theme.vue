@@ -2,7 +2,7 @@
 
     <div class="uk-form-horizontal">
 
-        <template v-if="node.type === 'page'">
+        <template v-if="node.type === 'page' || node.type === 'case-study'">
             <div class="uk-form-row">
                 <span class="uk-form-label">{{ 'Title' | trans }}</span>
                 <div class="uk-form-controls uk-form-controls-text">
